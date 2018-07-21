@@ -1,4 +1,19 @@
 {
+    "bunny/bunny": {
+        "version": "v0.4.0"
+    },
+    "enqueue/amqp-bunny": {
+        "version": "0.8",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "0.8",
+            "ref": "367ed088c05b18d7dc5aec06d6820d809486bca3"
+        }
+    },
+    "enqueue/amqp-tools": {
+        "version": "0.8.x-dev"
+    },
     "psr/cache": {
         "version": "1.0.1"
     },
@@ -10,6 +25,18 @@
     },
     "psr/simple-cache": {
         "version": "1.0.1"
+    },
+    "queue-interop/amqp-interop": {
+        "version": "0.7.x-dev"
+    },
+    "queue-interop/queue-interop": {
+        "version": "1.0-dev"
+    },
+    "react/event-loop": {
+        "version": "v1.0.0"
+    },
+    "react/promise": {
+        "version": "2.x-dev"
     },
     "symfony/cache": {
         "version": "v4.1.1"
