@@ -6,6 +6,7 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "enqueue/amqp-bunny": "^0.8.31",
+        "enqueue/messenger-adapter": "@dev",
         "symfony/console": "^4.1",
         "symfony/flex": "^1.0",
         "symfony/framework-bundle": "^4.1",
