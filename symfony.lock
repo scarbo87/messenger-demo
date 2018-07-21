@@ -2,6 +2,18 @@
     "bunny/bunny": {
         "version": "v0.4.0"
     },
+    "doctrine/annotations": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.0",
+            "ref": "cb4152ebcadbe620ea2261da1a1c5a9b8cea7672"
+        }
+    },
+    "doctrine/lexer": {
+        "version": "1.0.x-dev"
+    },
     "enqueue/amqp-bunny": {
         "version": "0.8",
         "recipe": {
@@ -43,6 +55,15 @@
     },
     "paragonie/random_compat": {
         "version": "v9.99.99"
+    },
+    "phpdocumentor/reflection-common": {
+        "version": "1.0.1"
+    },
+    "phpdocumentor/reflection-docblock": {
+        "version": "4.3.0"
+    },
+    "phpdocumentor/type-resolver": {
+        "version": "0.4.0"
     },
     "psr/cache": {
         "version": "1.0.x-dev"
@@ -128,6 +149,9 @@
     "symfony/http-kernel": {
         "version": "4.1.x-dev"
     },
+    "symfony/inflector": {
+        "version": "4.1.x-dev"
+    },
     "symfony/lts": {
         "version": "4-dev"
     },
@@ -152,6 +176,12 @@
     "symfony/profiler-pack": {
         "version": "dev-master"
     },
+    "symfony/property-access": {
+        "version": "4.1.x-dev"
+    },
+    "symfony/property-info": {
+        "version": "4.1.x-dev"
+    },
     "symfony/routing": {
         "version": "4.0",
         "recipe": {
@@ -160,6 +190,12 @@
             "version": "4.0",
             "ref": "cda8b550123383d25827705d05a42acf6819fe4e"
         }
+    },
+    "symfony/serializer": {
+        "version": "4.1.x-dev"
+    },
+    "symfony/serializer-pack": {
+        "version": "v1.0.1"
     },
     "symfony/stopwatch": {
         "version": "4.1.x-dev"
@@ -193,5 +229,8 @@
     },
     "twig/twig": {
         "version": "2.x-dev"
+    },
+    "webmozart/assert": {
+        "version": "1.3-dev"
     }
 }
