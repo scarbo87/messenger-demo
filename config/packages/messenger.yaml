@@ -1,9 +1,19 @@
 framework:
     messenger:
+        default_bus: messenger.produce.bus
+
+        buses:
+            messenger.produce.bus:
+                middleware:
+                  - 'messenger.middleware.validation'
+            messenger.consume.bus:
+                middleware:
+                  - 'App\Middleware\DeduplicationMiddleware'
+
         transports:
-            # Uncomment the following line to enable a transport named "amqp"
-            # amqp: '%env(MESSENGER_TRANSPORT_DSN)%'
+            gitlab.command: enqueue://default?queue[name]=gitlab&topic[name]=gitlab
+            jira.command: enqueue://default?queue[name]=jira&topic[name]=jira
 
         routing:
-            # Route your messages to the transports
-            # 'App\Message\YourMessage': amqp
+            'App\Message\Gitlab\MrMessage': gitlab.command
+            'App\Message\Jira\TransitionMessage': jira.command

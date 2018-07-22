@@ -68,6 +68,9 @@
     "phpdocumentor/type-resolver": {
         "version": "0.4.0"
     },
+    "predis/predis": {
+        "version": "v1.1.x-dev"
+    },
     "psr/cache": {
         "version": "1.0.x-dev"
     },
@@ -215,6 +218,15 @@
     "symfony/stopwatch": {
         "version": "4.1.x-dev"
     },
+    "symfony/translation": {
+        "version": "3.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.3",
+            "ref": "6bcd6c570c017ea6ae5a7a6a027c929fd3542cd8"
+        }
+    },
     "symfony/twig-bridge": {
         "version": "4.1.x-dev"
     },
@@ -226,6 +238,9 @@
             "version": "3.3",
             "ref": "f75ac166398e107796ca94cc57fa1edaa06ec47f"
         }
+    },
+    "symfony/validator": {
+        "version": "4.1.x-dev"
     },
     "symfony/var-dumper": {
         "version": "4.1.x-dev"
