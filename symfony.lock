@@ -53,6 +53,9 @@
     "enqueue/null": {
         "version": "0.8.x-dev"
     },
+    "monolog/monolog": {
+        "version": "1.x-dev"
+    },
     "paragonie/random_compat": {
         "version": "v9.99.99"
     },
@@ -162,6 +165,18 @@
             "branch": "master",
             "version": "4.1",
             "ref": "85ab0b55d90a8f3e29e1b685a71f5b37923a7f5e"
+        }
+    },
+    "symfony/monolog-bridge": {
+        "version": "4.1.x-dev"
+    },
+    "symfony/monolog-bundle": {
+        "version": "3.1",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.1",
+            "ref": "51b7a31438c8aeeda7931a0ece98a945c91e7f20"
         }
     },
     "symfony/options-resolver": {
