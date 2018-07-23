@@ -28,6 +28,7 @@ framework:
             gitlab.command: enqueue://default?queue[name]=gitlab&topic[name]=gitlab
             jira.command: enqueue://default?queue[name]=jira&topic[name]=jira
 
+# если закомментировать роутинг, то сообщения будут обрабатываться синхронно
         routing:
             'App\Message\Gitlab\MrMessage': gitlab.command
             'App\Message\Jira\TransitionMessage': jira.command

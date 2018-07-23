@@ -2,7 +2,6 @@
 
 namespace App\MessageHandler\Gitlab;
 
-use App\EnvelopeItem\AuditItem;
 use App\EnvelopeItem\ParentMessage;
 use App\Message\Gitlab\MrMessage;
 use App\Message\Jira\TransitionMessage;
@@ -22,6 +21,9 @@ class MRMessageHandler implements HandlerInterface
     public function __invoke(MrMessage $message): void
     {
         // ... анализируем данные из gitlab
+        dump('MRMessageHandler: sleeping 2 sec ...');
+        sleep(2);
+        dump($message);
         // ... и получаем issue key
         $issueKey = $message->getSourceBranch();
 

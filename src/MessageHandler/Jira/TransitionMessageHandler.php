@@ -9,6 +9,8 @@ class TransitionMessageHandler implements HandlerInterface
 {
     public function __invoke(TransitionMessage $message)
     {
-        throw new \RuntimeException($message->getIssueKey());
+        dump('TransitionMessageHandler: sleeping 1 sec ...');
+        sleep(1);
+        dump($message);
     }
 }
