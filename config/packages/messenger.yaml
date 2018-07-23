@@ -1,3 +1,16 @@
+services:
+    messenger.middleware.produce_audit:
+        class: App\Middleware\ProduceAuditMiddleware
+        factory: 'App\Middleware\AuditMiddlewareFactory:createProduceAuditMiddleware'
+        abstract: true
+        arguments: ['PT1H']
+
+    messenger.middleware.consume_audit:
+            class: App\Middleware\ConsumeAuditMiddleware
+            factory: 'App\Middleware\AuditMiddlewareFactory:createConsumeAuditMiddleware'
+            abstract: true
+            arguments: ['PT1H']
+
 framework:
     messenger:
         default_bus: messenger.produce.bus
@@ -5,10 +18,11 @@ framework:
         buses:
             messenger.produce.bus:
                 middleware:
-                  - 'messenger.middleware.validation'
+                  - messenger.middleware.validation
+                  - messenger.middleware.produce_audit: ['P30D']
             messenger.consume.bus:
                 middleware:
-                  - 'App\Middleware\DeduplicationMiddleware'
+                  - messenger.middleware.consume_audit: ['P30D']
 
         transports:
             gitlab.command: enqueue://default?queue[name]=gitlab&topic[name]=gitlab

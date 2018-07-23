@@ -2,7 +2,7 @@
 
 namespace App\MessageHandler\Gitlab;
 
-use App\EnvelopeItem\IdItem;
+use App\EnvelopeItem\AuditItem;
 use App\EnvelopeItem\ParentMessage;
 use App\Message\Gitlab\MrMessage;
 use App\Message\Jira\TransitionMessage;
@@ -27,7 +27,6 @@ class MRMessageHandler implements HandlerInterface
 
         $this->bus->dispatch(
             (new Envelope(new TransitionMessage(42, $issueKey)))
-                ->with(new IdItem())
                 ->with(new ParentMessage($message))
         );
     }

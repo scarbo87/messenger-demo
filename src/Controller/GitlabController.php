@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\EnvelopeItem\IdItem;
+use App\EnvelopeItem\AuditItem;
 use App\JSend\JSend;
 use App\Message\Gitlab\MrMessage;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -23,13 +23,11 @@ class GitlabController extends Controller
     public function mr(Request $request): JsonResponse
     {
         $this->bus->dispatch(
-            (new Envelope(
-                new MrMessage(
-                    $request->get('id'),
-                    $request->get('targetBranch'),
-                    $request->get('sourceBranch')
-                )
-            ))->with(new IdItem())
+            new MrMessage(
+                $request->get('id'),
+                $request->get('targetBranch'),
+                $request->get('sourceBranch')
+            )
         );
 
         return JSend::createSuccess($request->get('id'));
