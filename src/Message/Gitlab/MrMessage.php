@@ -6,9 +6,19 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 class MrMessage
 {
-    /** @var @Assert\Regex("/^issue-\d+/")*/
+    /**
+     * @var string
+     *
+     * @Assert\Regex("/^issue-\d+/")
+     * @Assert\NotNull()
+     */
     private $targetBranch;
-    /** @var @Assert\Regex("/^issue-\d+/")*/
+    /**
+     * @var string
+     *
+     * @Assert\Regex("/^issue-\d+/")
+     * @Assert\NotNull()
+     */
     private $sourceBranch;
 
     public function __construct($targetBranch, $sourceBranch)

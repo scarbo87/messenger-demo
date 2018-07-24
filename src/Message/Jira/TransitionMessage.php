@@ -6,7 +6,12 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 class TransitionMessage
 {
-    /** @var @Assert\Regex("/^issue-\d+/")*/
+    /**
+     * @var string
+     *
+     * @Assert\Regex("/^issue-\d+/")
+     * @Assert\NotNull()
+     */
     private $issueKey;
     private $transitionId;
     private $comment;

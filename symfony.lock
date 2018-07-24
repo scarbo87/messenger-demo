@@ -11,6 +11,15 @@
             "ref": "cb4152ebcadbe620ea2261da1a1c5a9b8cea7672"
         }
     },
+    "doctrine/cache": {
+        "version": "1.8.x-dev"
+    },
+    "doctrine/dbal": {
+        "version": "2.8.x-dev"
+    },
+    "doctrine/event-manager": {
+        "version": "1.0.x-dev"
+    },
     "doctrine/lexer": {
         "version": "1.0.x-dev"
     },
@@ -33,6 +42,15 @@
             "branch": "master",
             "version": "0.7",
             "ref": "9e937ccb79e08b978f91fb816d4e6d645813113a"
+        }
+    },
+    "enqueue/dbal": {
+        "version": "0.8",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "0.8",
+            "ref": "7b05df4d7e97874f719baa645ab8b6aafe203f9b"
         }
     },
     "enqueue/enqueue": {
