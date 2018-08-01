@@ -7,6 +7,7 @@ use App\Message\Gitlab\MrMessage;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Messenger\Exception\ValidationFailedException;
 use Symfony\Component\Messenger\MessageBusInterface;
 
 class GitlabController extends Controller
@@ -20,13 +21,18 @@ class GitlabController extends Controller
 
     public function mr(Request $request): JsonResponse
     {
-        $this->bus->dispatch(
-            new MrMessage(
-                $request->get('targetBranch'),
-                $request->get('sourceBranch')
-            )
-        );
-
-        return JSend::createSuccess($request->get('id'));
+        try {
+            $this->bus->dispatch(
+                new MrMessage(
+                    $request->get('targetBranch'),
+                    $request->get('sourceBranch')
+                )
+            );
+            return JSend::createSuccess('ok');
+        } catch (ValidationFailedException $e) {
+            return JSend::createError((string)$e->getViolations(), 400);
+        } catch (\Throwable $e) {
+            return JSend::createFail($e);
+        }
     }
 }

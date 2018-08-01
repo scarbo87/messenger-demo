@@ -24,7 +24,7 @@ class JSend
 
     public static function createFail($data): JsonResponse
     {
-        return new JsonResponse(['status' => 'fail', 'data' => $data], 200);
+        return new JsonResponse(['status' => 'fail', 'data' => $data], 500);
     }
 
     public static function createSuccess($data): JsonResponse
